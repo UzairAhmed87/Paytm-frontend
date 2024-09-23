@@ -46,6 +46,11 @@ export const SendMoney = () => {
                             headers:{
                                 Authorization:"Bearer " + localStorage.getItem("token")
                             }
+                        }).then(res => alert("Transaction successful"))
+                        .catch(err => {
+                            console.log(err);
+                            alert("Unable to transfer")
+                            
                         })
                     }} className="justify-center rounded-md text-sm font-medium ring-offset-background transition-colors h-10 px-4 py-2 w-full bg-green-500 text-white">
                         Initiate Transfer

@@ -2,7 +2,6 @@ import { useEffect, useState } from "react"
 import { Button } from "./Button"
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import { useSearchParams } from "react-router-dom";
 export const Users = () => {
     // Replace with backend call
     const [users, setUsers] = useState([]);
