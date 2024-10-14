@@ -6,7 +6,7 @@ import { InputBox } from "../components/InputBox"
 import { SubHeading } from "../components/SubHeading"
 import { useNavigate } from "react-router-dom"
 import axios from "axios"
-export const Signup = () => {
+ const Signup = () => {
   const [firstName,setFirstName] = useState("")
   const [lastName,setLastName] = useState("")
   const [username,setUserName] = useState("")
@@ -19,7 +19,7 @@ export const Signup = () => {
         <SubHeading label={"Enter your infromation to create an account"} />
         <InputBox onChange={(e)=>setFirstName(e.target.value)} placeholder="John" label={"First Name"} />
         <InputBox onChange={(e)=>setLastName(e.target.value)} placeholder="Doe" label={"Last Name"} />
-        <InputBox onChange={(e)=>setUserName(e.target.value)} placeholder="harkirat@gmail.com" label={"Email"} />
+        <InputBox onChange={(e)=>setUserName(e.target.value)} placeholder="john@gmail.com" label={"Email"} />
         <InputBox onChange={(e)=>setPassword(e.target.value)} placeholder="123456" label={"Password"} />
         <div className="pt-4">
           <Button onClick={()=>{
@@ -47,3 +47,4 @@ export const Signup = () => {
     </div>
   </div>
 }
+export default Signup

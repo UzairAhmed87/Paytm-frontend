@@ -29,12 +29,15 @@ function Signin() {
     alert("Login successful")
   navigate("/dashboard")
   }
-  ).catch(err => {console.log(err)}
+  ).catch(err => {
+    console.log(err)
+  alert("Account doesn't exist")
+  }
   )
 }} label={"Sign In"}/>
 </div>
 
-<BottomWarning label={"Don't have an account?"} buttonText={"Sign Up"} to={"/dashboard"}/>
+<BottomWarning label={"Don't have an account?"} buttonText={"Sign Up"} to={"/signup"}/>
         </div>
       </div>
     </div>
