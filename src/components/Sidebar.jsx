@@ -19,6 +19,11 @@ const Sidebar = () => {
           
         });
     }, []);
+    const logout =() => {
+        localStorage.removeItem("token")
+        navigate("/signin")
+        
+    }
   return (
   
     <div className=' absolute right-0 top-14 text-white bg-gray-800 text-left'>
@@ -30,11 +35,6 @@ const Sidebar = () => {
     </div>
   )
 }
-const logout =() => {
-    localStorage.removeItem("token")
-    const navigate = useNavigate()
-    navigate("/signin")
-    
-}
+
 
 export default Sidebar
