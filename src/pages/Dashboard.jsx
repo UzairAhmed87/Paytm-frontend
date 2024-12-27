@@ -3,6 +3,7 @@ import Appbar from '../components/Appbar'
 import { Balance } from '../components/Balance'
 import { Users } from '../components/Users'
 import axios from 'axios'
+import bgImage from '../assets/bg.jpg'
 function Dashboard() {
   const [balance,setBalance] = useState('0')
  useEffect(()=>{
@@ -23,7 +24,7 @@ function Dashboard() {
  },[])
   
   return (
-    <div className='bg-slate-300 h-screen'>
+    <div className='bg-slate-300 bg-center bg-cover h-screen'style={{backgroundImage : `url(${bgImage})`}}>
     <Appbar/>
     <Balance value={Math.floor(balance)}/>
     <Users/>

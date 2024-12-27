@@ -16,8 +16,8 @@ export const Users = () => {
             }
           })
           .then((res) => {
-            setId(res.data._id)
-            console.log(res.data);
+            setId(res.data.id)
+            console.log(res.data.id);
             
             
           });
@@ -30,13 +30,16 @@ useEffect(()=>{
     })
 },[Filter])
     return <div className="mx-4">
-        <div className="font-bold mt-6 text-lg">
+        
+        <div className="my-2">
+            <input onChange={(e)=>{setFilter(e.target.value)}} type="text" placeholder="Search users..." className=" mx-auto flex mt-4 pr-40 px-2 py-1 border rounded border-slate-200"></input>
+        </div>
+        <div className="font-bold mt-6 text-3xl mb-2">
             Users
         </div>
-        <div className="my-2">
-            <input onChange={(e)=>{setFilter(e.target.value)}} type="text" placeholder="Search users..." className="w-full px-2 py-1 border rounded border-slate-200"></input>
-        </div>
         <div>
+            
+            
             {users.filter((user)=>user._id !== id).map((user) => <User key={user._id} user={user}  />)}
         </div>
         </div>
@@ -44,17 +47,21 @@ useEffect(()=>{
 
 function User({user}) {
   
+    const capitalize = (str) => {
+        if (!str) return ''; // Handle empty strings
+        return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+    };
     const navigate = useNavigate()
     return <div className="flex justify-between">
         <div className="flex">
             <div className="rounded-full h-12 w-12 bg-slate-200 flex justify-center mt-1 mr-2">
                 <div className="flex flex-col justify-center h-full text-xl">
-                    {user.firstName[0]}
+                    {capitalize(user.firstName[0])}
                 </div>
             </div>
-            <div className="flex flex-col justify-center h-ful">
-                <div>
-                    {user.firstName} {user.lastName}
+            <div className="flex flex-col justify-center h-full text-xl font-semibold">
+                <div >
+                    {capitalize(user.firstName)} {capitalize(user.lastName)}
                 </div>
             </div>
         </div>
