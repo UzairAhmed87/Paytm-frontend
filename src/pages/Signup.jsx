@@ -20,8 +20,8 @@ import bgImage from '../assets/bg.jpg'
         <SubHeading label={"Enter your infromation to create an account"} />
         <InputBox onChange={(e)=>setFirstName(e.target.value)} placeholder="John" label={"First Name"} />
         <InputBox onChange={(e)=>setLastName(e.target.value)} placeholder="Doe" label={"Last Name"} />
-        <InputBox onChange={(e)=>setUserName(e.target.value)} placeholder="john@gmail.com" label={"Email"} />
-        <InputBox onChange={(e)=>setPassword(e.target.value)} placeholder="123456" label={"Password"} />
+        <InputBox onChange={(e)=>setUserName(e.target.value)} placeholder="john@gmail.com" label={"email"} />
+        <InputBox onChange={(e)=>setPassword(e.target.value)} placeholder="123456" label={"password"} />
         <div className="pt-4">
           <Button onClick={()=>{
            axios.post("http://localhost:3000/api/v1/user/signup",{
